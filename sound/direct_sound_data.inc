@@ -8738,6 +8738,33 @@ Cry_Pecharunt::
 	.incbin "sound/direct_sound_samples/cries/pecharunt.bin"
 .endif
 .endif @ P_FAMILY_PECHARUNT
+    .align 2
+Cry_Caponnie::
+	.incbin "sound/direct_sound_samples/cries/caponnie.bin"
+    .align 2
+Cry_Chickenful::
+	.incbin "sound/direct_sound_samples/cries/chickenful.bin"
+    .align 2
+Cry_Chicklestial::
+	.incbin "sound/direct_sound_samples/cries/chicklestial.bin"
+    .align 2
+Cry_Syrucco::
+	.incbin "sound/direct_sound_samples/cries/syrucco.bin"
+    .align 2
+Cry_Mapulut::
+	.incbin "sound/direct_sound_samples/cries/mapulut.bin"
+    .align 2
+Cry_Masterple::
+	.incbin "sound/direct_sound_samples/cries/masterple.bin"
+    .align 2
+Cry_Wawa::
+	.incbin "sound/direct_sound_samples/cries/wawa.bin"
+    .align 2
+Cry_Chiwarock::
+	.incbin "sound/direct_sound_samples/cries/chiwarock.bin"
+    .align 2
+Cry_Mirubelle::
+	.incbin "sound/direct_sound_samples/cries/mirubelle.bin"
 .endif @ P_CRIES_ENABLED
 
 .if TESTING == TRUE

@@ -2552,6 +2552,15 @@ gCryTable::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+    cry Cry_Caponnie
+    cry Cry_Chickenful
+    cry Cry_Chicklestial
+    cry Cry_Syrucco
+    cry Cry_Mapulut
+    cry Cry_Masterple
+    cry Cry_Wawa
+    cry Cry_Chiwarock
+    cry Cry_Mirubelle
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -5108,4 +5117,13 @@ gCryTable_Reverse::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+    cry_reverse Cry_Caponnie
+    cry_reverse Cry_Chickenful
+    cry_reverse Cry_Chicklestial
+    cry_reverse Cry_Syrucco
+    cry_reverse Cry_Mapulut
+    cry_reverse Cry_Masterple
+    cry_reverse Cry_Wawa
+    cry_reverse Cry_Chiwarock
+    cry_reverse Cry_Mirubelle
 .endif @ P_CRIES_ENABLED
