@@ -1269,10 +1269,32 @@ PalletTown_ProfessorOaksLab_EventScript_Aide2GameClear::
 PalletTown_ProfessorOaksLab_EventScript_Aide3::
 	lock
 	faceplayer
-	famechecker FAMECHECKER_OAK, 2
-	msgbox PalletTown_ProfessorOaksLab_Text_OakIsAuthorityOnMons
+    goto_if_set FLAG_GOT_INF_CANDY, PalletTown_ProfessorOaksLab_EventScript_HaveInfiniteCandy
+	msgbox PalletTown_ProfessorOaksLab_Text_WantInfiniteCandy, MSGBOX_YESNO
+    goto_if_eq VAR_RESULT, YES, PalletTown_ProfessorOaksLab_EventScript_GiveInfiniteCandy
+    msgbox PalletTown_ProfessorOaksLab_Text_NoCandy
 	release
 	end
+    
+PalletTown_ProfessorOaksLab_EventScript_HaveInfiniteCandy::
+    msgbox PalletTown_ProfessorOaksLab_Text_HaveInfiniteCandy
+    release
+    end
+    
+PalletTown_ProfessorOaksLab_EventScript_GiveInfiniteCandy::
+    checkitemspace ITEM_INF_CANDY
+    goto_if_eq VAR_RESULT, FALSE, PalletTown_ProfessorOaksLab_EventScript_NoRoomForInfiniteCandy
+    additem ITEM_INF_CANDY
+    msgbox PalletTown_ProfessorOaksLab_Text_GetInfiniteCandy
+    msgreceiveditem PalletTown_ProfessorOaksLab_Text_ReceivedInfiniteCandy, ITEM_INF_CANDY
+    setflag FLAG_GOT_INF_CANDY
+    msgbox PalletTown_ProfessorOaksLab_Text_UseCandyWell
+    release
+    
+PalletTown_ProfessorOaksLab_EventScript_NoRoomForInfiniteCandy::
+    msgbox PalletTown_ProfessorOaksLab_Text_NoRoomForCandy
+    release
+    end
 
 PalletTown_ProfessorOaksLab_EventScript_Pokedex::
 	msgbox PalletTown_ProfessorOaksLab_Text_BlankEncyclopedia, MSGBOX_NPC
@@ -1586,11 +1608,34 @@ PalletTown_ProfessorOaksLab_Text_OakIsGoingToHaveRadioShow::
 	.string "The program will be called PROF.\n"
 	.string "OAK's POKéMON SEMINAR.$"
 
-PalletTown_ProfessorOaksLab_Text_OakIsAuthorityOnMons::
-	.string "PROF. OAK may not look like much,\n"
-	.string "but he's the authority on POKéMON.\p"
-	.string "Many POKéMON TRAINERS hold him in\n"
-	.string "high regard.$"
+PalletTown_ProfessorOaksLab_Text_WantInfiniteCandy::
+	.string "PROF. OAK told me to give this only\n"
+	.string "to busy trainers.\n"
+	.string "Not a clue where he got it from.\n"
+	.string "Want some?$"
+    
+PalletTown_ProfessorOaksLab_Text_HaveInfiniteCandy::
+	.string "Somehow that thing just never\n"
+	.string "runs out!\n"
+	.string "Use it as much as you want.$"
+    
+PalletTown_ProfessorOaksLab_Text_NoCandy::
+	.string "Oh, no candy from strangers?$"
+    
+PalletTown_ProfessorOaksLab_Text_NoRoomForCandy::
+    .string "Looks like you've got no room!$"
+
+PalletTown_ProfessorOaksLab_Text_GetInfiniteCandy::
+    .string "Great! Take this!$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedInfiniteCandy::
+    .string "{PLAYER} received an INFINITE CANDY\n"
+    .string "from the Aide.$"
+    
+PalletTown_ProfessorOaksLab_Text_UseCandyWell::
+    .string "Use that to level up as much as\n"
+    .string "you'd like!\n"
+    .string "It seems to never run out.$"
 
 PalletTown_ProfessorOaksLab_Text_OakFavorToAskYouPlayer::
 	.string "Ah, now this is excellent!\p"
