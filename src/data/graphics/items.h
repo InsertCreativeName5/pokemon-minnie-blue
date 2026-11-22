@@ -1883,6 +1883,8 @@ const u16 gItemIconPalette_FameChecker[] = INCGFX_U16("graphics/items/icon_palet
 const u32 gItemIcon_TeachyTV[] = INCGFX_U32("graphics/items/icons/teachy_tv.png", ".4bpp.smol");
 const u16 gItemIconPalette_TeachyTV[] = INCGFX_U16("graphics/items/icon_palettes/teachy_tv.pal", ".gbapal");
 
+const u16 gItemIconPalette_InfCandy[] = INCGFX_U16("graphics/items/icon_palettes/inf_candy.pal", ".gbapal");
+
 // Story Key Items
 
 const u32 gItemIcon_SSTicket[] = INCGFX_U32("graphics/items/icons/ss_ticket.png", ".4bpp.smol");
